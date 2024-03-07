@@ -1,0 +1,20 @@
+<html>
+    <head></head>
+
+    <body>
+        <a href="{% url 'myapp:price_list' %}">product Filter under 1000</a>
+
+        {% for p in productsss %}
+            <div>
+                <a href="{% url 'myapp:detail' pk=p.pk %}">Product Detail</a>
+                <p>{{ p.name }}</p>
+                <p>{{ p.price }}</p>
+                {% comment %} <p>{{ p.stock }}</p> {% endcomment %}
+                {% comment %} <p>{{ p.description }}</p> {% endcomment %}
+                <p>{{ p.image }}</p>
+                {% comment %} <p>{{ p.category }}</p> {% endcomment %}
+                {% comment %} <p>{{ p.discount }}</p> {% endcomment %}
+            </div>
+        {% endfor %}
+    </body>
+</html>
